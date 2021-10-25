@@ -9,13 +9,13 @@ const getAll = async () => {
 
 const getById = async (id) => {
   const db = await connection();
-  const product = db.collection('product').findOne({ _id: ObjectId(id) });
+  const product = db.collection('products').findOne({ _id: ObjectId(id) });
   return product;
 };
 
 const increaseValue = async (id) => {
   const db = await connection();
-  db.collection('product').updateOne(
+  db.collection('products').updateOne(
     { _id: ObjectId(id) },
     { $inc: { value: 5 } },
   );
