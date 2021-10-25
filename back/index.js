@@ -11,6 +11,8 @@ const CORS_OPTIONS = {
 
 app.use(cors(CORS_OPTIONS));
 
+app.get('/', (_req, res) => res.send('Please navigate to /products'));
+
 app.get('/products', async (_req, res) => {
   const products = 'produtos';
 
